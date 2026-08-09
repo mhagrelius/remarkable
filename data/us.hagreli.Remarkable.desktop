@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Remarkable
+GenericName=Handwriting Transcriber
+Comment=Turn handwritten notes into Markdown with a model on this machine
+Exec=remarkable %f
+Icon=us.hagreli.Remarkable
+Terminal=false
+Categories=Utility;TextTools;GTK;
+Keywords=handwriting;transcribe;OCR;notes;markdown;reMarkable;tablet;
+MimeType=image/png;image/jpeg;application/pdf;
+StartupNotify=true
+DBusActivatable=true

@@ -1,0 +1,41 @@
+[package]
+name = "remarkable"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.80"
+description = "Handwritten notes off a reMarkable tablet, turned into Markdown by a local model"
+license = "GPL-3.0-or-later"
+
+[lib]
+name = "remarkable"
+path = "src/lib.rs"
+
+[[bin]]
+name = "remarkable"
+path = "src/main.rs"
+
+[dependencies]
+gtk = { package = "gtk4", version = "0.11", features = ["v4_22"] }
+adw = { package = "libadwaita", version = "0.9", features = ["v1_9"] }
+gio = { version = "0.22", features = ["v2_80"] }
+glib = "0.22"
+# The platform's HTTP client, as in familiar. Its async calls complete on the
+# GLib main loop, so a page of OCR is a `send_and_read_async` callback rather
+# than a worker thread and a channel. Needs `libsoup-3.0-dev` to build.
+soup = { package = "soup3", version = "0.9" }
+# Decoding a PNG, measuring its rows and cropping it. gdk-pixbuf is already
+# linked into the process — GTK loads every icon through it — so this is a
+# platform built-in rather than a dependency, and like cairo in familiar's
+# office writers it is not a GTK type and needs no display. That is what keeps
+# the chunker's tests in the display-free half of the suite.
+gdk-pixbuf = "0.22"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# The `date_processed` line in a transcript's frontmatter.
+chrono = { version = "0.4", default-features = false, features = [
+    "std",
+    "clock",
+] }
+
+[dev-dependencies]
+tempfile = "3"

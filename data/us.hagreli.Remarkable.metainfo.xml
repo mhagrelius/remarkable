@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>us.hagreli.Remarkable</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Remarkable</name>
+  <summary>Handwritten notes, turned into Markdown</summary>
+
+  <description>
+    <p>
+      Drop a reMarkable export on the window and get Markdown back: headings,
+      lists and all. The reading is done by a vision model running on this
+      machine through llama-server, so no page of your handwriting is uploaded
+      anywhere and no subscription is involved.
+    </p>
+    <p>
+      A notebook exports as one very tall image. Remarkable cuts it into
+      overlapping bands at the gaps in the writing, reads each one in turn, and
+      stitches the results back together, so a seventeen-thousand-pixel page
+      comes back transcribed rather than summarised.
+    </p>
+    <p>
+      With the tablet in developer mode and plugged in over USB, notebooks can
+      be listed and fetched straight off the device.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">us.hagreli.Remarkable.desktop</launchable>
+
+  <url type="homepage">https://github.com/mhagrelius/remarkable</url>
+  <url type="bugtracker">https://github.com/mhagrelius/remarkable/issues</url>
+
+  <developer id="us.hagreli">
+    <name>Matthew Hagrelius</name>
+  </developer>
+
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </supports>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="0.1.0" date="2026-08-02">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

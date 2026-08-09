@@ -1,0 +1,4 @@
+/target
+/dist
+*.gguf
+/.claude/settings.local.json
